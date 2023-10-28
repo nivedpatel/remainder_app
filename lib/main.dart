@@ -56,10 +56,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
     Duration duration = scheduledTime.isBefore(now)
         ? scheduledTime.add(Duration(days: 1)).difference(now)
         : scheduledTime.difference(now);
-
+    
     Future.delayed(duration, () {
       audioplayer.play('notification.mp3');
-      // You can add additional actions here, such as displaying notifications.
     });
   }
 
